@@ -4,8 +4,10 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.AbstractPage;
+import pages.InformationPage;
 import pages.LoginPage;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -39,6 +41,12 @@ public class Steps{
 
         LoginPage loginPage = new LoginPage(driver);
         return (loginPage.getLoggedInUserName().trim().equals('@' + username));
+    }
+
+    public List<String> newDescription() throws InterruptedException {
+        InformationPage informationPage = new InformationPage(driver);
+        List<String> descriptions = informationPage.addNewInformation();
+        return descriptions;
     }
 
 

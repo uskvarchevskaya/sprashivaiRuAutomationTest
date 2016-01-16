@@ -4,6 +4,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import steps.Steps;
 
+import java.util.List;
+
 /**
  * Created by PC on 15.01.2016.
  */
@@ -28,5 +30,12 @@ public class SparashivaiRuAutomationTest {
     public void oneCanLoginSprashivaiRu(){
         steps.loginSprashivaiRu(USERNAME, PASSWORD);
         Assert.assertTrue(steps.isLoggedIn(USERNAME));
+    }
+
+    @Test(description="Add new description")
+    public void oneCanAddNewDescription() throws InterruptedException {
+        steps.loginSprashivaiRu(USERNAME, PASSWORD);
+        List<String> description = steps.newDescription();
+        Assert.assertEquals(description.get(0),description.get(1));
     }
 }
