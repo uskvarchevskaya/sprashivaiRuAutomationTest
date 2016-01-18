@@ -30,7 +30,7 @@ public class LoginPage extends AbstractPage{
     @FindBy(xpath = "//a[@href='testProject']")
     private WebElement buttonProfile;
 
-    @FindBy(xpath = "//div[@class='pr-name-main']")
+    @FindBy(xpath = "//span[@class='pr-username']")
     private WebElement linkLoggedInUser;
 
     public LoginPage(WebDriver driver) {

@@ -6,6 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.AbstractPage;
 import pages.InformationPage;
 import pages.LoginPage;
+import pages.SearchFriendPage;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -43,10 +44,16 @@ public class Steps{
         return (loginPage.getLoggedInUserName().trim().equals('@' + username));
     }
 
-    public List<String> newDescription() throws InterruptedException {
-        InformationPage informationPage = new InformationPage(driver);
-        List<String> descriptions = informationPage.addNewInformation();
-        return descriptions;
+//    public List<String> newDescription() throws InterruptedException {
+//        InformationPage informationPage = new InformationPage(driver);
+//        List<String> descriptions = informationPage.addNewInformation();
+//        return descriptions;
+//    }
+
+    public List<String> search() throws InterruptedException{
+        SearchFriendPage searchFriendPage = new SearchFriendPage(driver);
+        List<String> friends = searchFriendPage.findFriend();
+        return friends;
     }
 
 

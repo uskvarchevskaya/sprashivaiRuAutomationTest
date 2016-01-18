@@ -32,10 +32,17 @@ public class SparashivaiRuAutomationTest {
         Assert.assertTrue(steps.isLoggedIn(USERNAME));
     }
 
-    @Test(description="Add new description")
-    public void oneCanAddNewDescription() throws InterruptedException {
-        steps.loginSprashivaiRu(USERNAME, PASSWORD);
-        List<String> description = steps.newDescription();
-        Assert.assertEquals(description.get(0),description.get(1));
+//    @Test(description="Add new description")
+//    public void oneCanAddNewDescription() throws InterruptedException {
+//        steps.loginSprashivaiRu(USERNAME, PASSWORD);
+//        List<String> description = steps.newDescription();
+//        Assert.assertEquals(description.get(0),description.get(1));
+//    }
+
+    @Test(description = "Search Friend")
+    public void oneCanFindAFriend() throws InterruptedException{
+        steps.loginSprashivaiRu(USERNAME,PASSWORD);
+        List<String> friend = steps.search() ;
+        Assert.assertEquals(friend.get(0),friend.get(1));
     }
 }
