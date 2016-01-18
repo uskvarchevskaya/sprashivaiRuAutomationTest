@@ -41,11 +41,11 @@ public class Steps{
         return (loginPage.getLoggedInUserName().trim().equals('@' + username));
     }
 
-//    public List<String> newDescription() throws InterruptedException {
-//        InformationPage informationPage = new InformationPage(driver);
-//        List<String> descriptions = informationPage.addNewInformation();
-//        return descriptions;
-//    }
+    public List<String> newDescription() throws InterruptedException {
+        InformationPage informationPage = new InformationPage(driver);
+        List<String> descriptions = informationPage.addNewInformation();
+        return descriptions;
+    }
 
     public List<String> search() throws InterruptedException{
         SearchFriendPage searchFriendPage = new SearchFriendPage(driver);
@@ -57,6 +57,12 @@ public class Steps{
         FavoritesPage favoritesPage = new FavoritesPage(driver);
         List<String> listOfFavorites = favoritesPage.addToFavorites();
         return listOfFavorites;
+    }
+
+    public List<String> addLocation() throws InterruptedException{
+        LocationPage locationPage = new LocationPage(driver);
+        List<String> locations = locationPage.addNewLocation();
+        return locations;
     }
 
 

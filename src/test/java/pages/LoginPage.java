@@ -27,9 +27,6 @@ public class LoginPage extends AbstractPage{
     @FindBy(xpath = "//button[@id='signin_btn']")
     private WebElement buttonSubmit;
 
-    @FindBy(xpath = "//a[@href='testProject']")
-    private WebElement buttonProfile;
-
     @FindBy(xpath = "//span[@class='pr-username']")
     private WebElement linkLoggedInUser;
 
@@ -50,7 +47,6 @@ public class LoginPage extends AbstractPage{
         inputUsername.sendKeys(username);
         inputPassword.sendKeys(password);
         buttonSubmit.click();
-        buttonProfile.click();
         logger.info("Login formed");
     }
 

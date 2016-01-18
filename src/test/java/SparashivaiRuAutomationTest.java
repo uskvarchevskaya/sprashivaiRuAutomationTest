@@ -34,12 +34,12 @@ public class SparashivaiRuAutomationTest {
         Assert.assertTrue(steps.isLoggedIn(USERNAME));
     }
 
-//    @Test(description="Add new description")
-//    public void oneCanAddNewDescription() throws InterruptedException {
-//        steps.loginSprashivaiRu(USERNAME, PASSWORD);
-//        List<String> description = steps.newDescription();
-//        Assert.assertEquals(description.get(0),description.get(1));
-//    }
+    @Test(description="Add new description")
+    public void oneCanAddNewDescription() throws InterruptedException {
+        steps.loginSprashivaiRu(USERNAME, PASSWORD);
+        List<String> description = steps.newDescription();
+        Assert.assertEquals(description.get(0),description.get(1));
+    }
 
     @Test(description = "Search Friend")
     public void oneCanFindAFriend() throws InterruptedException{
@@ -53,7 +53,12 @@ public class SparashivaiRuAutomationTest {
         steps.loginSprashivaiRu(USERNAME,PASSWORD);
         List<String> favorites = steps.addTo() ;
         Assert.assertEquals(favorites.get(0),favorites.get(1));
-        //favoritesUnfollow.unfollowUser();
+    }
 
+    @Test(description = "Add new location")
+    public void oneCanAddNewLocation() throws InterruptedException{
+        steps.loginSprashivaiRu(USERNAME,PASSWORD);
+        List<String> location = steps.addLocation() ;
+        Assert.assertEquals(location.get(0),location.get(1));
     }
 }
