@@ -2,6 +2,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.FavoritesPage;
 import steps.Steps;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 public class SparashivaiRuAutomationTest {
 
     private Steps steps;
+    private FavoritesPage favoritesUnfollow;
     private final String USERNAME = "testProject";
     private final String PASSWORD = "testProject";
 
@@ -44,5 +46,14 @@ public class SparashivaiRuAutomationTest {
         steps.loginSprashivaiRu(USERNAME,PASSWORD);
         List<String> friend = steps.search() ;
         Assert.assertEquals(friend.get(0),friend.get(1));
+    }
+
+    @Test(description = "Add to favorites")
+    public void oneCanAddUserToFavorites() throws InterruptedException{
+        steps.loginSprashivaiRu(USERNAME,PASSWORD);
+        List<String> favorites = steps.addTo() ;
+        Assert.assertEquals(favorites.get(0),favorites.get(1));
+        //favoritesUnfollow.unfollowUser();
+
     }
 }

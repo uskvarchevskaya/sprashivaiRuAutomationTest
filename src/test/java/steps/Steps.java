@@ -3,10 +3,7 @@ package steps;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import pages.AbstractPage;
-import pages.InformationPage;
-import pages.LoginPage;
-import pages.SearchFriendPage;
+import pages.*;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -54,6 +51,12 @@ public class Steps{
         SearchFriendPage searchFriendPage = new SearchFriendPage(driver);
         List<String> friends = searchFriendPage.findFriend();
         return friends;
+    }
+
+    public List<String> addTo() throws InterruptedException{
+        FavoritesPage favoritesPage = new FavoritesPage(driver);
+        List<String> listOfFavorites = favoritesPage.addToFavorites();
+        return listOfFavorites;
     }
 
 
